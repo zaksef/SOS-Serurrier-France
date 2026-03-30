@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <title>Sos Serrurier - Dépannage 30 min Var - 07 53 67 38 66</title>
+    <title>Sos Serrurier - Dépannage 30 min Var - 07 53 73 01 12</title>
 
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -57,87 +57,58 @@
 
         section h2 { font-family: 'DM Sans'; font-size: 2.2rem; font-weight: 800; margin-bottom: 30px; text-align: center; color: var(--text-dark); }
 
-        /* 1. PRESTATIONS CERTIFIÉES */
+        /* 1. PRESTATIONS */
         .services-section { padding: 80px 5%; }
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto; }
         .service-card { padding: 30px; border: 2px solid var(--border-color); border-radius: 20px; transition: 0.3s; background: #fff; text-decoration: none; color: inherit; box-shadow: 0 4px 15px rgba(0,102,255,0.05); }
         .service-card:hover { border-color: var(--primary-blue); transform: translateY(-8px); }
         .service-card h3 { color: var(--primary-blue); font-weight: 800; margin-bottom: 10px; }
 
-        /* 2. BESOIN D'AIDE + MAP ARTISANS */
+        /* SECTION PRIX */
+        .price-section { padding: 40px 5%; background: var(--bg-blue-ultra-light); text-align: center; }
+        .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; max-width: 1000px; margin: 0 auto; }
+        .price-card { background: white; padding: 20px; border-radius: 15px; border: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; }
+        .price-label { font-weight: 600; color: var(--text-dark); }
+        .price-value { font-weight: 800; color: var(--primary-blue); }
+
+        /* 2. BESOIN D'AIDE + MAP */
         .contact-container { padding: 80px 5%; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
         .big-phone-boxed { font-size: 2rem; color: var(--primary-blue); font-weight: 800; text-decoration: none; display: inline-block; padding: 15px 30px; border: 3px solid var(--primary-blue); border-radius: 15px; background: white; text-align: center; width: 100%; box-shadow: 0 10px 20px rgba(0,102,255,0.15); }
-        
         .map-wrapper { position: relative; width: 100%; height: 400px; border-radius: 25px; overflow: hidden; border: 3px solid var(--primary-blue); margin-top: 20px; background: #eee; }
-        
-        /* Marqueurs Artisans Hommes (Placés sur Toulon, Hyères, Fréjus, Draguignan) */
-        .artisan-marker {
-            position: absolute; width: 55px; height: 55px; border: 3px solid white; border-radius: 50%; 
-            z-index: 10; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.3); animation: pulseMarker 2s infinite; overflow: hidden;
-        }
+        .artisan-marker { position: absolute; width: 55px; height: 55px; border: 3px solid white; border-radius: 50%; z-index: 10; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.3); animation: pulseMarker 2s infinite; overflow: hidden; }
         .artisan-marker img { width: 100%; height: 100%; object-fit: cover; }
-        
-        @keyframes pulseMarker { 0% { box-shadow: 0 0 0 0 rgba(0, 102, 255, 0.7); } 70% { box-shadow: 0 0 0 12px rgba(0, 102, 255, 0); } 100% { box-shadow: 0 0 0 0 rgba(0, 102, 255, 0); } }
-
-        /* Coordonnées précises pour le Var */
         .loc-toulon { top: 65%; left: 22%; }
         .loc-hyeres { top: 72%; left: 38%; }
         .loc-frejus { top: 48%; left: 82%; }
         .loc-draguignan { top: 38%; left: 65%; }
 
-        /* 3. ARGUMENTS BADGES */
-        .badges-section { padding: 40px 5%; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
-        .badge-card { padding: 15px 30px; border: 2.5px solid var(--primary-blue); border-radius: 15px; background: white; font-weight: 800; color: var(--primary-blue); box-shadow: 0 5px 15px rgba(0,102,255,0.1); text-align: center; }
-
-        /* 4. SEO ZONES */
-        .seo-zones { padding: 80px 5%; background: var(--bg-blue-ultra-light); border: 2px solid var(--border-color); margin: 0 5%; border-radius: 30px; }
-        .zone-tag { display: inline-block; background: white; padding: 8px 18px; border-radius: 50px; font-size: 0.85rem; color: var(--primary-blue); font-weight: 700; border: 2px solid var(--border-color); margin: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-
-        /* 5. EXPERTISE MULTIMARQUE */
-        .partners-section { padding: 80px 5%; text-align: center; overflow: hidden; }
-        .marquee { display: flex; width: 200%; animation: scrollMarquee 30s linear infinite; }
-        .text-logo { min-width: 150px; border: 2px solid var(--border-color); padding: 15px; border-radius: 12px; font-weight: 900; margin: 0 10px; color: var(--text-dark); background: white; }
-        @keyframes scrollMarquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-
-        /* 6. POURQUOI NOUS CHOISIR */
-        .why-us { padding: 80px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto; }
-        .why-card { background: white; padding: 35px; border-radius: 25px; border: 1px solid var(--border-color); text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.02); }
-
-        /* 7. AVIS CLIENTS */
-        .reviews-section { padding: 80px 0; overflow: hidden; }
-        .carousel-track { display: flex; width: calc(350px * 12); animation: scrollReviews 40s linear infinite; }
-        .review-card { width: 320px; background: white; padding: 25px; border-radius: 20px; margin: 0 15px; border: 1px solid var(--border-color); box-shadow: 0 5px 15px rgba(0,0,0,0.03); }
-        .stars { color: var(--gold); font-size: 1.2rem; margin-bottom: 10px; }
-        @keyframes scrollReviews { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-350px * 6)); } }
-
-        /* FORMULAIRE MODERNE */
+        /* FORMULAIRE */
         .contact-form { background: #ffffff; padding: 40px; border-radius: 30px; border: 1px solid var(--border-color); box-shadow: 0 20px 50px rgba(0, 102, 255, 0.08); }
         .form-group { margin-bottom: 20px; text-align: left; }
         .form-group input, .form-group select { width: 100%; padding: 16px; border: 2px solid #f0f4f8; border-radius: 12px; background: #f8fbff; outline: none; }
         .btn-submit-modern { width: 100%; background: linear-gradient(135deg, var(--primary-blue) 0%, #004ecc 100%); color: white; border: none; padding: 20px; border-radius: 12px; font-weight: 800; cursor: pointer; box-shadow: 0 10px 20px rgba(0, 102, 255, 0.3); }
 
-        /* MODALES LÉGALES */
-        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 11000; padding: 20px; }
-        .modal-content { background: white; max-width: 700px; margin: 50px auto; padding: 30px; border-radius: 20px; }
+        /* 5. EXPERTISE & ASSURANCES */
+        .partners-section { padding: 60px 5%; text-align: center; background: white; overflow: hidden; }
+        .marquee { display: flex; width: 200%; animation: scrollMarquee 30s linear infinite; }
+        .text-logo { min-width: 150px; border: 2px solid var(--border-color); padding: 15px; border-radius: 12px; font-weight: 900; margin: 0 10px; color: var(--text-dark); background: white; }
+        @keyframes scrollMarquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
+        .assurance-banner { padding: 30px 5%; background: #f1f7ff; border-top: 1px solid var(--border-color); display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; align-items: center; }
+        .assurance-item { font-weight: 800; font-size: 0.9rem; color: #555; text-transform: uppercase; opacity: 0.6; }
+
+        /* FOOTER & MODALES */
         footer { padding: 50px; text-align: center; border-top: 1px solid var(--border-color); background: white; }
     </style>
 </head>
 <body>
-
-    <div id="consent-v2" style="position:fixed; bottom:0; width:100%; background:white; padding:20px; z-index:10000; display:none; border-top:3px solid var(--primary-blue);">
-        <div style="max-width:1000px; margin:0 auto; text-align:center;">
-            <p style="font-size:0.85rem; margin-bottom:15px;">Nous utilisons des cookies (Consent Mode V2) pour optimiser votre dépannage dans le Var.</p>
-            <button style="padding:10px 25px; background:var(--primary-blue); color:white; border:none; border-radius:5px; cursor:pointer; font-weight:bold;" onclick="handleConsent(true)">Tout Accepter</button>
-        </div>
-    </div>
 
     <nav>
         <a href="#" class="logo-container">
             <svg class="logo-svg" viewBox="0 0 100 100" style="height:35px"><path d="M50 5 L10 25 V50 C10 75 50 95 50 95 C50 95 90 75 90 50 V25 L50 5Z" fill="#E6F0FF" stroke="#0066FF" stroke-width="2"/><rect x="46" y="35" width="8" height="45" rx="2" fill="#0066FF"/></svg>
             <div class="logo-text">Sos <span>Serrurier</span></div>
         </a>
-        <a href="tel:0753673866" class="btn-blue-outline animated-phone" style="text-decoration:none; font-weight:bold; color:var(--primary-blue); border:2px solid var(--primary-blue); padding:8px 15px; border-radius:8px;">07 53 67 38 66</a>
+        <a href="tel:0753730112" class="btn-blue-outline animated-phone" style="text-decoration:none; font-weight:bold; color:var(--primary-blue); border:2px solid var(--primary-blue); padding:8px 15px; border-radius:8px;">07 53 73 01 12</a>
     </nav>
 
     <section class="hero">
@@ -145,67 +116,63 @@
         <div class="hero-content">
             <h1>Serrurier Var (83) - 30 min</h1>
             <p>Dépannage d'urgence 24/7. Devis Gratuit avant travaux.</p>
-            <a href="tel:0753673866" class="big-phone-boxed animated-phone" style="background: white; margin-top: 20px; text-decoration:none">07 53 67 38 66</a>
+            <a href="tel:0753730112" class="big-phone-boxed animated-phone" style="background: white; margin-top: 20px; text-decoration:none">07 53 73 01 12</a>
         </div>
     </section>
 
     <section class="services-section">
         <h2>Nos Prestations Certifiées</h2>
         <div class="services-grid">
-            <a href="#devis-section" class="service-card"><h3>Ouverture de porte</h3><p>Porte claquée ou verrouillée. Intervention sans dégâts.</p></a>
-            <a href="#devis-section" class="service-card"><h3>Changement Serrure</h3><p>Installation de cylindres haute sécurité A2P.</p></a>
-            <a href="#devis-section" class="service-card"><h3>Blindage de Porte</h3><p>Sécurisation maximale contre les effractions.</p></a>
-            <a href="#devis-section" class="service-card"><h3>Rideaux Métalliques</h3><p>Déblocage et réparation rideaux de magasins.</p></a>
+            <div class="service-card"><h3>Ouverture de porte</h3><p>Porte claquée ou verrouillée. Intervention sans dégâts.</p></div>
+            <div class="service-card"><h3>Changement Serrure</h3><p>Installation de cylindres haute sécurité A2P.</p></div>
+            <div class="service-card"><h3>Blindage de Porte</h3><p>Sécurisation maximale contre les effractions.</p></div>
+            <div class="service-card"><h3>Rideaux Métalliques</h3><p>Déblocage et réparation rideaux de magasins.</p></div>
+        </div>
+    </section>
+
+    <section class="price-section">
+        <h2 style="margin-bottom:20px;">Nos Tarifs Transparents</h2>
+        <div class="price-grid">
+            <div class="price-card"><span class="price-label">Ouverture porte claquée</span><span class="price-value">Dès 50€</span></div>
+            <div class="price-card"><span class="price-label">Ouverture porte fermée</span><span class="price-value">Dès 100€</span></div>
+            <div class="price-card"><span class="price-label">Ouverture porte blindée</span><span class="price-value">Dès 180€</span></div>
+            <div class="price-card"><span class="price-label">Changement de serrure</span><span class="price-value">Sur Devis</span></div>
+            <div class="price-card"><span class="price-label">Blindage de porte</span><span class="price-value">Sur Devis</span></div>
         </div>
     </section>
 
     <section class="contact-container" id="devis-section">
         <div class="contact-info-side">
             <h2>Besoin d'aide ?</h2>
-            <a href="tel:0753673866" class="big-phone-boxed animated-phone" style="text-decoration:none">07 53 67 38 66</a>
-            
+            <a href="tel:0753730112" class="big-phone-boxed animated-phone" style="text-decoration:none">07 53 73 01 12</a>
             <div class="map-wrapper">
-                <a href="tel:0753673866" class="artisan-marker loc-toulon" title="Artisan Toulon"><img src="https://randomuser.me/api/portraits/men/32.jpg"></a>
-                <a href="tel:0753673866" class="artisan-marker loc-hyeres" title="Artisan Hyères"><img src="https://randomuser.me/api/portraits/men/45.jpg"></a>
-                <a href="tel:0753673866" class="artisan-marker loc-frejus" title="Artisan Fréjus"><img src="https://randomuser.me/api/portraits/men/12.jpg"></a>
-                <a href="tel:0753673866" class="artisan-marker loc-draguignan" title="Artisan Draguignan"><img src="https://randomuser.me/api/portraits/men/22.jpg"></a>
-                
+                <a href="tel:0753730112" class="artisan-marker loc-toulon"><img src="https://randomuser.me/api/portraits/men/32.jpg"></a>
+                <a href="tel:0753730112" class="artisan-marker loc-hyeres"><img src="https://randomuser.me/api/portraits/men/45.jpg"></a>
+                <a href="tel:0753730112" class="artisan-marker loc-frejus"><img src="https://randomuser.me/api/portraits/men/12.jpg"></a>
+                <a href="tel:0753730112" class="artisan-marker loc-draguignan"><img src="https://randomuser.me/api/portraits/men/22.jpg"></a>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d368369.313429393!2d5.938634812328114!3d43.42121349078696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12c9103986927971%3A0x30819a5c40a2330!2sVar!5e0!3m2!1sfr!2sfr!4v17118123456785" width="100%" height="100%" style="border:0; pointer-events:none;"></iframe>
             </div>
         </div>
 
         <div class="contact-form">
-            <h3 style="text-align:center; margin-bottom:20px; font-family:'DM Sans';">Dépannage Express</h3>
-            <form>
-                <div class="form-group"><input type="text" placeholder="Votre Nom" required></div>
-                <div class="form-group"><input type="tel" placeholder="Téléphone" required></div>
+            <h3 style="text-align:center; margin-bottom:20px;">Dépannage Express</h3>
+            <form action="https://formspree.io/f/SOSFRANCE.CONTACT@GMAIL.com" method="POST">
+                <div class="form-group"><input type="text" name="nom" placeholder="Votre Nom" required></div>
+                <div class="form-group"><input type="tel" name="telephone" placeholder="Téléphone" required></div>
                 <div class="form-group">
-                    <select required>
+                    <select name="besoin" required>
                         <option value="">Nature du problème</option>
-                        <option>Porte claquée</option>
-                        <option>Serrure bloquée</option>
+                        <option>Ouverture porte claquée</option>
+                        <option>Ouverture porte fermée à clef</option>
+                        <option>Ouverture porte blindée</option>
+                        <option>Changement de serrure</option>
+                        <option>Blindage de porte</option>
+                        <option>Rideau Métallique</option>
                         <option>Perte de clés</option>
                     </select>
                 </div>
-                <button type="submit" class="btn-submit-modern">DEMANDER UN DEVIS GRATUIT</button>
+                <button type="submit" class="btn-submit-modern">ENVOYER MA DEMANDE</button>
             </form>
-        </div>
-    </section>
-
-    <section class="badges-section">
-        <div class="badge-card">+20 Villes couvertes</div>
-        <div class="badge-card">Intervention 30 min</div>
-        <div class="badge-card">Disponible 24h/24 7j/7</div>
-        <div class="badge-card">100% Satisfait</div>
-    </section>
-
-    <section class="seo-zones">
-        <h2>Zones d'intervention dans le Var (83)</h2>
-        <div class="zones-grid">
-            <span class="zone-tag">83000 Toulon</span><span class="zone-tag">83400 Hyères</span><span class="zone-tag">83600 Fréjus</span>
-            <span class="zone-tag">83300 Draguignan</span><span class="zone-tag">83500 La Seyne</span><span class="zone-tag">83700 St-Raphaël</span>
-            <span class="zone-tag">83140 Six-Fours</span><span class="zone-tag">83130 La Garde</span><span class="zone-tag">83160 La Valette</span>
-            <span class="zone-tag">83110 Sanary</span><span class="zone-tag">83170 Brignoles</span><span class="zone-tag">83120 Ste-Maxime</span>
         </div>
     </section>
 
@@ -215,44 +182,29 @@
             <div class="text-logo">FICHET</div><div class="text-logo">PICARD</div><div class="text-logo">VACHETTE</div>
             <div class="text-logo">BRICARD</div><div class="text-logo">MOTTURA</div><div class="text-logo">ABUS</div>
             <div class="text-logo">FICHET</div><div class="text-logo">PICARD</div><div class="text-logo">VACHETTE</div>
-            <div class="text-logo">BRICARD</div><div class="text-logo">MOTTURA</div><div class="text-logo">ABUS</div>
         </div>
     </section>
 
-    <section class="why-us">
-        <div class="why-card"><h4>Prix Fixes</h4><p>Pas de surprise, tarifs annoncés avant intervention.</p></div>
-        <div class="why-card"><h4>Agrément Assurances</h4><p>Travaux remboursés par votre assurance habitation.</p></div>
-        <div class="why-card"><h4>Savoir-faire</h4><p>Artisans serruriers qualifiés avec 10 ans d'expérience.</p></div>
-    </section>
+    <div class="assurance-banner">
+        <span style="font-weight:900; color:var(--primary-blue); margin-right:20px;">AGRÉÉ ASSURANCES :</span>
+        <div class="assurance-item">AXA</div><div class="assurance-item">ALLIANZ</div><div class="assurance-item">MACIF</div>
+        <div class="assurance-item">MAIF</div><div class="assurance-item">GROUPAMA</div><div class="assurance-item">GENERALI</div>
+        <div class="assurance-item">MATMUT</div><div class="assurance-item">MAAF</div>
+    </div>
 
-    <section class="reviews-section">
-        <h2>Avis Clients</h2>
-        <div class="carousel-track">
-            <div class="review-card"><div class="stars">★★★★★</div><b>Jean M.</b><p>"Super rapide à Toulon, prix honnête."</p></div>
-            <div class="review-card"><div class="stars">★★★★★</div><b>Sophie L.</b><p>"Serrurier très pro pour mon blindage."</p></div>
-            <div class="review-card"><div class="stars">★★★★★</div><b>Marc V.</b><p>"Dépannage parfait en pleine nuit."</p></div>
-            <div class="review-card"><div class="stars">★★★★★</div><b>Jean M.</b><p>"Super rapide à Toulon."</p></div>
+    <section class="seo-zones">
+        <h2>Interventions dans tout le Var (83)</h2>
+        <div class="zones-grid">
+            <span class="zone-tag">83000 Toulon</span><span class="zone-tag">83400 Hyères</span><span class="zone-tag">83600 Fréjus</span>
+            <span class="zone-tag">83300 Draguignan</span><span class="zone-tag">83500 La Seyne</span><span class="zone-tag">83700 St-Raphaël</span>
+            <span class="zone-tag">83140 Six-Fours</span><span class="zone-tag">83130 La Garde</span>
         </div>
     </section>
 
     <footer>
-        <p>Sos Serrurier Var (83) - 07 53 67 38 66</p>
-        <div style="margin-top:15px; font-size:0.8rem">
-            <span style="cursor:pointer; text-decoration:underline" onclick="openLegal()">Mentions Légales</span> | 
-            <span style="cursor:pointer; text-decoration:underline" onclick="openLegal()">Confidentialité</span>
-        </div>
+        <p>Sos Serrurier Var (83) - 07 53 73 01 12</p>
+        <p style="font-size:0.7rem; opacity:0.6; margin-top:10px;">Artisans serruriers qualifiés - Intervention 24/7</p>
     </footer>
 
-    <div id="modal-legal" class="modal"><div class="modal-content"><h2 onclick="this.parentElement.parentElement.style.display='none'" style="cursor:pointer">Fermer [X]</h2><p>Contenu légal conforme RGPD / SIRET en cours.</p></div></div>
-
-    <script>
-        function handleConsent(accepted) {
-            gtag('consent', 'update', { 'ad_storage': accepted ? 'granted' : 'denied' });
-            localStorage.setItem('consent_v2_ok', '1');
-            document.getElementById('consent-v2').style.display = 'none';
-        }
-        window.onload = function() { if(!localStorage.getItem('consent_v2_ok')) document.getElementById('consent-v2').style.display = 'block'; };
-        function openLegal() { document.getElementById('modal-legal').style.display = 'block'; }
-    </script>
 </body>
 </html>
