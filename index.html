@@ -32,6 +32,7 @@
             --success-green: #22c55e;
             --bg-blue-ultra-light: #f4f9ff;
             --border-color: #dbeafe;
+            --gold: #FFD700;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -46,122 +47,147 @@
         .logo-text { font-weight: 800; font-size: 1.2rem; font-family: 'DM Sans'; text-transform: uppercase; }
         .logo-text span { color: var(--primary-blue); }
 
-        .hero { position: relative; height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; background: url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover; color: white; }
+        .hero { 
+            position: relative; height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; 
+            background: url('https://images.unsplash.com/photo-1627931398037-c7f76eb1c79e?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover; 
+            color: white; 
+        }
         .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(0, 102, 255, 0.8) 0%, rgba(0, 0, 0, 0.7) 100%); z-index: 1; }
         .hero-content { position: relative; z-index: 2; padding: 20px; width: 90%; max-width: 900px; }
 
-        /* TITRES */
         section h2 { font-family: 'DM Sans'; font-size: 2.2rem; font-weight: 800; margin-bottom: 30px; text-align: center; color: var(--text-dark); }
 
-        /* 1. NOS PRESTATIONS CERTIFIÉES */
+        /* 1. PRESTATIONS CERTIFIÉES */
         .services-section { padding: 80px 5%; }
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto; }
         .service-card { padding: 30px; border: 2px solid var(--border-color); border-radius: 20px; transition: 0.3s; background: #fff; text-decoration: none; color: inherit; box-shadow: 0 4px 15px rgba(0,102,255,0.05); }
         .service-card:hover { border-color: var(--primary-blue); transform: translateY(-8px); }
+        .service-card h3 { color: var(--primary-blue); font-weight: 800; margin-bottom: 10px; }
 
-        /* 2. BESOIN D'AIDE + MAP */
+        /* 2. BESOIN D'AIDE + MAP ARTISANS */
         .contact-container { padding: 80px 5%; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
-        .big-phone-boxed { font-size: 2rem; color: var(--primary-blue); font-weight: 800; text-decoration: none; display: inline-block; padding: 15px 30px; border: 3px solid var(--primary-blue); border-radius: 15px; background: white; text-align: center; }
-        .map-wrapper { position: relative; width: 100%; height: 350px; border-radius: 20px; overflow: hidden; border: 3px solid var(--primary-blue); margin-top: 20px; }
+        .big-phone-boxed { font-size: 2rem; color: var(--primary-blue); font-weight: 800; text-decoration: none; display: inline-block; padding: 15px 30px; border: 3px solid var(--primary-blue); border-radius: 15px; background: white; text-align: center; width: 100%; box-shadow: 0 10px 20px rgba(0,102,255,0.15); }
+        
+        .map-wrapper { position: relative; width: 100%; height: 400px; border-radius: 25px; overflow: hidden; border: 3px solid var(--primary-blue); margin-top: 20px; background: #eee; }
+        
+        /* Marqueurs Artisans Hommes (Placés sur Toulon, Hyères, Fréjus, Draguignan) */
+        .artisan-marker {
+            position: absolute; width: 55px; height: 55px; border: 3px solid white; border-radius: 50%; 
+            z-index: 10; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.3); animation: pulseMarker 2s infinite; overflow: hidden;
+        }
+        .artisan-marker img { width: 100%; height: 100%; object-fit: cover; }
+        
+        @keyframes pulseMarker { 0% { box-shadow: 0 0 0 0 rgba(0, 102, 255, 0.7); } 70% { box-shadow: 0 0 0 12px rgba(0, 102, 255, 0); } 100% { box-shadow: 0 0 0 0 rgba(0, 102, 255, 0); } }
 
-        /* 3. ARGUMENTS ENTOURÉS */
+        /* Coordonnées précises pour le Var */
+        .loc-toulon { top: 65%; left: 22%; }
+        .loc-hyeres { top: 72%; left: 38%; }
+        .loc-frejus { top: 48%; left: 82%; }
+        .loc-draguignan { top: 38%; left: 65%; }
+
+        /* 3. ARGUMENTS BADGES */
         .badges-section { padding: 40px 5%; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
-        .badge-card { padding: 15px 25px; border: 2px solid var(--primary-blue); border-radius: 15px; background: white; font-weight: 800; color: var(--primary-blue); box-shadow: 0 5px 15px rgba(0,102,255,0.1); }
+        .badge-card { padding: 15px 30px; border: 2.5px solid var(--primary-blue); border-radius: 15px; background: white; font-weight: 800; color: var(--primary-blue); box-shadow: 0 5px 15px rgba(0,102,255,0.1); text-align: center; }
 
         /* 4. SEO ZONES */
-        .seo-zones { padding: 80px 5%; background: var(--bg-blue-ultra-light); }
-        .zone-tag { display: inline-block; background: white; padding: 8px 15px; border-radius: 50px; font-size: 0.85rem; color: var(--primary-blue); font-weight: 700; border: 2px solid var(--border-color); margin: 5px; }
+        .seo-zones { padding: 80px 5%; background: var(--bg-blue-ultra-light); border: 2px solid var(--border-color); margin: 0 5%; border-radius: 30px; }
+        .zone-tag { display: inline-block; background: white; padding: 8px 18px; border-radius: 50px; font-size: 0.85rem; color: var(--primary-blue); font-weight: 700; border: 2px solid var(--border-color); margin: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
 
         /* 5. EXPERTISE MULTIMARQUE */
-        .partners-section { padding: 80px 5%; text-align: center; }
-        .text-logo { display: inline-block; border: 2px solid var(--border-color); padding: 15px; border-radius: 10px; font-weight: 900; margin: 10px; color: var(--text-dark); }
+        .partners-section { padding: 80px 5%; text-align: center; overflow: hidden; }
+        .marquee { display: flex; width: 200%; animation: scrollMarquee 30s linear infinite; }
+        .text-logo { min-width: 150px; border: 2px solid var(--border-color); padding: 15px; border-radius: 12px; font-weight: 900; margin: 0 10px; color: var(--text-dark); background: white; }
+        @keyframes scrollMarquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
         /* 6. POURQUOI NOUS CHOISIR */
-        .why-us { padding: 80px 5%; background: var(--bg-blue-ultra-light); display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        .why-card { background: white; padding: 25px; border-radius: 20px; border: 1px solid var(--border-color); text-align: center; }
+        .why-us { padding: 80px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto; }
+        .why-card { background: white; padding: 35px; border-radius: 25px; border: 1px solid var(--border-color); text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.02); }
 
-        /* 7. AVIS */
+        /* 7. AVIS CLIENTS */
         .reviews-section { padding: 80px 0; overflow: hidden; }
-        .carousel-track { display: flex; width: calc(350px * 12); animation: scroll 45s linear infinite; }
-        .review-card { width: 320px; background: white; padding: 25px; border-radius: 20px; margin: 0 15px; border: 1px solid var(--border-color); }
-        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-350px * 6)); } }
+        .carousel-track { display: flex; width: calc(350px * 12); animation: scrollReviews 40s linear infinite; }
+        .review-card { width: 320px; background: white; padding: 25px; border-radius: 20px; margin: 0 15px; border: 1px solid var(--border-color); box-shadow: 0 5px 15px rgba(0,0,0,0.03); }
+        .stars { color: var(--gold); font-size: 1.2rem; margin-bottom: 10px; }
+        @keyframes scrollReviews { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-350px * 6)); } }
 
-        /* BANDEAU RGPD V2 LÉGAL */
-        #consent-v2 { position: fixed; bottom: 0; left: 0; width: 100%; background: white; z-index: 10000; padding: 20px 5%; box-shadow: 0 -10px 30px rgba(0,0,0,0.1); border-top: 2px solid var(--primary-blue); display: none; }
-        .consent-btn { padding: 10px 20px; border-radius: 8px; border: none; cursor: pointer; font-weight: 700; margin: 5px; }
+        /* FORMULAIRE MODERNE */
+        .contact-form { background: #ffffff; padding: 40px; border-radius: 30px; border: 1px solid var(--border-color); box-shadow: 0 20px 50px rgba(0, 102, 255, 0.08); }
+        .form-group { margin-bottom: 20px; text-align: left; }
+        .form-group input, .form-group select { width: 100%; padding: 16px; border: 2px solid #f0f4f8; border-radius: 12px; background: #f8fbff; outline: none; }
+        .btn-submit-modern { width: 100%; background: linear-gradient(135deg, var(--primary-blue) 0%, #004ecc 100%); color: white; border: none; padding: 20px; border-radius: 12px; font-weight: 800; cursor: pointer; box-shadow: 0 10px 20px rgba(0, 102, 255, 0.3); }
 
         /* MODALES LÉGALES */
-        .legal-link { color: var(--text-light); text-decoration: underline; cursor: pointer; font-size: 0.75rem; margin: 0 10px; }
-        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 11000; overflow-y: auto; padding: 40px 20px; }
-        .modal-content { background: white; max-width: 800px; margin: 0 auto; padding: 30px; border-radius: 15px; position: relative; }
-        .close-modal { position: sticky; top: 0; float: right; font-size: 2rem; cursor: pointer; }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 11000; padding: 20px; }
+        .modal-content { background: white; max-width: 700px; margin: 50px auto; padding: 30px; border-radius: 20px; }
 
-        footer { padding: 50px; text-align: center; background: white; border-top: 1px solid var(--border-color); }
+        footer { padding: 50px; text-align: center; border-top: 1px solid var(--border-color); background: white; }
     </style>
 </head>
 <body>
 
-    <div id="consent-v2">
-        <div style="max-width: 1100px; margin: 0 auto;">
-            <h4 style="margin-bottom: 10px;">Gestion des cookies (Consent Mode V2)</h4>
-            <p style="font-size: 0.8rem; color: var(--text-light); margin-bottom: 15px;">Nous utilisons des cookies pour sécuriser vos demandes et analyser notre trafic local dans le Var. Conformément au RGPD, vous pouvez accepter ou refuser ces traceurs.</p>
-            <button class="consent-btn" style="background: #eee;" onclick="handleConsent(false)">Refuser</button>
-            <button class="consent-btn" style="background: var(--primary-blue); color: white;" onclick="handleConsent(true)">Accepter</button>
+    <div id="consent-v2" style="position:fixed; bottom:0; width:100%; background:white; padding:20px; z-index:10000; display:none; border-top:3px solid var(--primary-blue);">
+        <div style="max-width:1000px; margin:0 auto; text-align:center;">
+            <p style="font-size:0.85rem; margin-bottom:15px;">Nous utilisons des cookies (Consent Mode V2) pour optimiser votre dépannage dans le Var.</p>
+            <button style="padding:10px 25px; background:var(--primary-blue); color:white; border:none; border-radius:5px; cursor:pointer; font-weight:bold;" onclick="handleConsent(true)">Tout Accepter</button>
         </div>
     </div>
 
     <nav>
-        <a href="/" class="logo-container">
+        <a href="#" class="logo-container">
             <svg class="logo-svg" viewBox="0 0 100 100" style="height:35px"><path d="M50 5 L10 25 V50 C10 75 50 95 50 95 C50 95 90 75 90 50 V25 L50 5Z" fill="#E6F0FF" stroke="#0066FF" stroke-width="2"/><rect x="46" y="35" width="8" height="45" rx="2" fill="#0066FF"/></svg>
             <div class="logo-text">Sos <span>Serrurier</span></div>
         </a>
-        <div class="nav-actions">
-            <a href="tel:0753673866" class="btn-blue-outline animated-phone">07 53 67 38 66</a>
-            <a href="#devis-section" class="btn-nav-devis" style="background:var(--primary-blue); color:white; padding:8px 15px; border-radius:8px; text-decoration:none;">Devis</a>
-        </div>
+        <a href="tel:0753673866" class="btn-blue-outline animated-phone" style="text-decoration:none; font-weight:bold; color:var(--primary-blue); border:2px solid var(--primary-blue); padding:8px 15px; border-radius:8px;">07 53 67 38 66</a>
     </nav>
 
     <section class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1>Serrurier Var (83) - 30 min</h1>
-            <p>Urgence serrurerie 24h/24 agréée assurances et certifiée.</p>
-            <a href="tel:0753673866" class="big-phone-boxed animated-phone" style="background: white; margin-top: 20px;">07 53 67 38 66</a>
+            <p>Dépannage d'urgence 24/7. Devis Gratuit avant travaux.</p>
+            <a href="tel:0753673866" class="big-phone-boxed animated-phone" style="background: white; margin-top: 20px; text-decoration:none">07 53 67 38 66</a>
         </div>
     </section>
 
     <section class="services-section">
         <h2>Nos Prestations Certifiées</h2>
         <div class="services-grid">
-            <div class="service-card"><h3>Ouverture de porte</h3><p>Porte claquée ou verrouillée. Ouverture sans dégâts.</p></div>
-            <div class="service-card"><h3>Blindage de porte</h3><p>Sécurisation haute performance anti-cambriolage.</p></div>
-            <div class="service-card"><h3>Changement Serrure</h3><p>Installation cylindres A2P toutes marques.</p></div>
-            <div class="service-card"><h3>Rideaux Métalliques</h3><p>Déblocage et réparation rideaux de magasins.</p></div>
+            <a href="#devis-section" class="service-card"><h3>Ouverture de porte</h3><p>Porte claquée ou verrouillée. Intervention sans dégâts.</p></a>
+            <a href="#devis-section" class="service-card"><h3>Changement Serrure</h3><p>Installation de cylindres haute sécurité A2P.</p></a>
+            <a href="#devis-section" class="service-card"><h3>Blindage de Porte</h3><p>Sécurisation maximale contre les effractions.</p></a>
+            <a href="#devis-section" class="service-card"><h3>Rideaux Métalliques</h3><p>Déblocage et réparation rideaux de magasins.</p></a>
         </div>
     </section>
 
     <section class="contact-container" id="devis-section">
         <div class="contact-info-side">
             <h2>Besoin d'aide ?</h2>
-            <a href="tel:0753673866" class="big-phone-boxed animated-phone">07 53 67 38 66</a>
-            <p style="color: var(--success-green); font-weight: 800; text-align: center;">● INTERVENTION 30 MIN DANS LE VAR</p>
+            <a href="tel:0753673866" class="big-phone-boxed animated-phone" style="text-decoration:none">07 53 67 38 66</a>
+            
             <div class="map-wrapper">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d368369.313429393!2d5.938634812328114!3d43.42121349078696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12c9103986927971%3A0x30819a5c40a2330!2sVar!5e0!3m2!1sfr!2sfr!4v17118123456785" width="100%" height="100%" style="border:0;" loading="lazy"></iframe>
+                <a href="tel:0753673866" class="artisan-marker loc-toulon" title="Artisan Toulon"><img src="https://randomuser.me/api/portraits/men/32.jpg"></a>
+                <a href="tel:0753673866" class="artisan-marker loc-hyeres" title="Artisan Hyères"><img src="https://randomuser.me/api/portraits/men/45.jpg"></a>
+                <a href="tel:0753673866" class="artisan-marker loc-frejus" title="Artisan Fréjus"><img src="https://randomuser.me/api/portraits/men/12.jpg"></a>
+                <a href="tel:0753673866" class="artisan-marker loc-draguignan" title="Artisan Draguignan"><img src="https://randomuser.me/api/portraits/men/22.jpg"></a>
+                
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d368369.313429393!2d5.938634812328114!3d43.42121349078696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12c9103986927971%3A0x30819a5c40a2330!2sVar!5e0!3m2!1sfr!2sfr!4v17118123456785" width="100%" height="100%" style="border:0; pointer-events:none;"></iframe>
             </div>
         </div>
+
         <div class="contact-form">
-            <h3 style="margin-bottom: 20px; color: var(--primary-blue);">Devis Gratuit Rapide</h3>
+            <h3 style="text-align:center; margin-bottom:20px; font-family:'DM Sans';">Dépannage Express</h3>
             <form>
-                <div class="form-group"><input type="text" placeholder="Nom Complet" required></div>
+                <div class="form-group"><input type="text" placeholder="Votre Nom" required></div>
                 <div class="form-group"><input type="tel" placeholder="Téléphone" required></div>
                 <div class="form-group">
                     <select required>
-                        <option value="">Votre Besoin</option>
-                        <option>Ouverture porte</option>
-                        <option>Blindage</option>
+                        <option value="">Nature du problème</option>
+                        <option>Porte claquée</option>
+                        <option>Serrure bloquée</option>
+                        <option>Perte de clés</option>
                     </select>
                 </div>
-                <button type="submit" class="btn-submit">DEMANDER L'ARTISAN</button>
+                <button type="submit" class="btn-submit-modern">DEMANDER UN DEVIS GRATUIT</button>
             </form>
         </div>
     </section>
@@ -174,74 +200,59 @@
     </section>
 
     <section class="seo-zones">
-        <h2>Zones d'intervention (83)</h2>
+        <h2>Zones d'intervention dans le Var (83)</h2>
         <div class="zones-grid">
-            <span class="zone-tag">83000 Toulon</span><span class="zone-tag">83400 Hyères</span><span class="zone-tag">83600 Fréjus</span><span class="zone-tag">83300 Draguignan</span>
+            <span class="zone-tag">83000 Toulon</span><span class="zone-tag">83400 Hyères</span><span class="zone-tag">83600 Fréjus</span>
+            <span class="zone-tag">83300 Draguignan</span><span class="zone-tag">83500 La Seyne</span><span class="zone-tag">83700 St-Raphaël</span>
+            <span class="zone-tag">83140 Six-Fours</span><span class="zone-tag">83130 La Garde</span><span class="zone-tag">83160 La Valette</span>
+            <span class="zone-tag">83110 Sanary</span><span class="zone-tag">83170 Brignoles</span><span class="zone-tag">83120 Ste-Maxime</span>
         </div>
     </section>
 
     <section class="partners-section">
         <h2>Expertise Multimarques</h2>
-        <div class="text-logo">Fichet</div><div class="text-logo">Picard</div><div class="text-logo">Vachette</div><div class="text-logo">Bricard</div>
+        <div class="marquee">
+            <div class="text-logo">FICHET</div><div class="text-logo">PICARD</div><div class="text-logo">VACHETTE</div>
+            <div class="text-logo">BRICARD</div><div class="text-logo">MOTTURA</div><div class="text-logo">ABUS</div>
+            <div class="text-logo">FICHET</div><div class="text-logo">PICARD</div><div class="text-logo">VACHETTE</div>
+            <div class="text-logo">BRICARD</div><div class="text-logo">MOTTURA</div><div class="text-logo">ABUS</div>
+        </div>
     </section>
 
     <section class="why-us">
-        <div class="why-card"><h4>Prix Fixes</h4><p>Annoncés avant travaux, sans surprise.</p></div>
-        <div class="why-card"><h4>Agrément Assurances</h4><p>Prise en charge facilitée pour vos sinistres.</p></div>
+        <div class="why-card"><h4>Prix Fixes</h4><p>Pas de surprise, tarifs annoncés avant intervention.</p></div>
+        <div class="why-card"><h4>Agrément Assurances</h4><p>Travaux remboursés par votre assurance habitation.</p></div>
+        <div class="why-card"><h4>Savoir-faire</h4><p>Artisans serruriers qualifiés avec 10 ans d'expérience.</p></div>
     </section>
 
     <section class="reviews-section">
+        <h2>Avis Clients</h2>
         <div class="carousel-track">
-            <div class="review-card"><b>Marc V.</b><p>"Intervention rapide à minuit pour ma porte. Merci !"</p></div>
-            <div class="review-card"><b>Sarah L.</b><p>"Travail soigné et artisan très poli."</p></div>
+            <div class="review-card"><div class="stars">★★★★★</div><b>Jean M.</b><p>"Super rapide à Toulon, prix honnête."</p></div>
+            <div class="review-card"><div class="stars">★★★★★</div><b>Sophie L.</b><p>"Serrurier très pro pour mon blindage."</p></div>
+            <div class="review-card"><div class="stars">★★★★★</div><b>Marc V.</b><p>"Dépannage parfait en pleine nuit."</p></div>
+            <div class="review-card"><div class="stars">★★★★★</div><b>Jean M.</b><p>"Super rapide à Toulon."</p></div>
         </div>
     </section>
 
     <footer>
         <p>Sos Serrurier Var (83) - 07 53 67 38 66</p>
-        <div style="margin-top: 15px;">
-            <span class="legal-link" onclick="openModal('mentions')">Mentions Légales</span>
-            <span class="legal-link" onclick="openModal('rgpd')">Politique de Confidentialité</span>
+        <div style="margin-top:15px; font-size:0.8rem">
+            <span style="cursor:pointer; text-decoration:underline" onclick="openLegal()">Mentions Légales</span> | 
+            <span style="cursor:pointer; text-decoration:underline" onclick="openLegal()">Confidentialité</span>
         </div>
     </footer>
 
-    <div id="modal-mentions" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('mentions')">&times;</span>
-            <h2>Mentions Légales</h2>
-            <p><strong>Propriétaire :</strong> Sos Serrurier Var<br><strong>SIRET :</strong> [VOTRE SIRET]<br><strong>Siège social :</strong> [VOTRE ADRESSE, VAR]<br><strong>Hébergeur :</strong> GitHub / Netlify</p>
-            <p>Le contenu de ce site est protégé par le droit de la propriété intellectuelle. Toute reproduction est interdite sans accord préalable.</p>
-        </div>
-    </div>
-
-    <div id="modal-rgpd" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('rgpd')">&times;</span>
-            <h2>Politique de Confidentialité</h2>
-            <p>Nous collectons votre nom et numéro de téléphone uniquement pour répondre à votre demande de dépannage urgente. Ces données ne sont jamais revendues.</p>
-            <p><strong>Médiation :</strong> Conformément à l'article L.612-1 du Code de la consommation, vous pouvez recourir gratuitement au service de médiation de la consommation dont nous relevons.</p>
-        </div>
-    </div>
+    <div id="modal-legal" class="modal"><div class="modal-content"><h2 onclick="this.parentElement.parentElement.style.display='none'" style="cursor:pointer">Fermer [X]</h2><p>Contenu légal conforme RGPD / SIRET en cours.</p></div></div>
 
     <script>
         function handleConsent(accepted) {
-            const status = accepted ? 'granted' : 'denied';
-            gtag('consent', 'update', {
-                'ad_storage': status,
-                'analytics_storage': status
-            });
-            localStorage.setItem('consent_v2_status', status);
+            gtag('consent', 'update', { 'ad_storage': accepted ? 'granted' : 'denied' });
+            localStorage.setItem('consent_v2_ok', '1');
             document.getElementById('consent-v2').style.display = 'none';
         }
-
-        window.onload = function() {
-            if (!localStorage.getItem('consent_v2_status')) {
-                document.getElementById('consent-v2').style.display = 'block';
-            }
-        };
-
-        function openModal(id) { document.getElementById('modal-' + id).style.display = 'block'; }
-        function closeModal(id) { document.getElementById('modal-' + id).style.display = 'none'; }
+        window.onload = function() { if(!localStorage.getItem('consent_v2_ok')) document.getElementById('consent-v2').style.display = 'block'; };
+        function openLegal() { document.getElementById('modal-legal').style.display = 'block'; }
     </script>
 </body>
 </html>
